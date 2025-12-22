@@ -1,5 +1,46 @@
+/* Global */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
   background-color: #f4f6fa;
+  color: #222;
+}
+
+/* App container */
+.app {
+  padding: 24px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Dashboard */
+.dashboard-title {
+  margin-bottom: 16px;
+}
+
+/* Cards layout */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Metric card */
+.metric-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.metric-card h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.metric-card p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
 }
