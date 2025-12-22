@@ -1,10 +1,15 @@
 function MetricCard({ title, value }) {
-  return (
-    <div className="metric-card">
-      <h3>{title}</h3>
-      <p>{value}</p>
-    </div>
-  );
+return (
+  <div>
+    <h2>Debug Values</h2>
+    {metrics.map((m) => (
+      <p key={m.id}>
+        {m.title}: {m.value}
+      </p>
+    ))}
+  </div>
+);
+
 }
 
 export default MetricCard;
