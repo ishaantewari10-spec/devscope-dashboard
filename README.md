@@ -46,7 +46,8 @@ It visualizes application metrics and performance trends through reusable UI com
 
 ## 📸 Screenshots
 
-![DevScope Dashboard](screenshot/dashboard.png)
+### Dashboard View
+![DevScope Dashboard](https://raw.githubusercontent.com/ishaantewari10-spec/devscope-dashboard/main/screenshots/dashboard.png)
 
 ### 👨‍💻 Author
 Built as a learning-focused project to strengthen front-end engineering and dashboard development skills.
