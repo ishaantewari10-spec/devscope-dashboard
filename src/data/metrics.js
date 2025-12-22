@@ -1,19 +1,13 @@
 export const metrics = [
-  {
-    id: 1,
-    title: "Page Load Time",
-    value: "2.3s"
-  },
-  {
-    id: 2,
-    title: "Component Renders",
-    value: "18"
-  },
-  {
-    id: 3,
-    title: "User Events",
-    value: "120"
-  }
+  { id: "load", title: "Page Load Time (s)", value: 0 },
+  { id: "renders", title: "Component Renders", value: 0 },
+  { id: "events", title: "User Events", value: 0 },
 ];
 
-export const performanceTrend = [1.2, 1.8, 2.0, 2.3, 2.1];
+export const performanceTrend = [
+  { name: "Init", value: 1.2 },
+  { name: "Load", value: 1.8 },
+  { name: "Render", value: 2.0 },
+  { name: "Interact", value: 2.3 },
+  { name: "Idle", value: 2.1 },
+];
