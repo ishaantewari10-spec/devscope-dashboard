@@ -32,9 +32,6 @@ It visualizes application metrics and performance trends through reusable UI com
 
 ---
 
-## 📂 Project Structure
-
----
 
 ## 🔮 Future Enhancements
 - Backend API integration for real-time metrics
@@ -51,3 +48,6 @@ It visualizes application metrics and performance trends through reusable UI com
 
 ### 👨‍💻 Author
 Built as a learning-focused project to strengthen front-end engineering and dashboard development skills.
+
+## 🌐 Live Demo
+👉 https://devscope-dashboard.netlify.app
