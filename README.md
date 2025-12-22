@@ -31,6 +31,7 @@ It visualizes real browser-based metrics such as page load time, user interactio
 
 ---
 
+
 ## 📊 What This Project Demonstrates
 - Strong understanding of React fundamentals
 - Component reusability using props
@@ -38,29 +39,9 @@ It visualizes real browser-based metrics such as page load time, user interactio
 - Integration of third-party visualization libraries
 - Scalable and maintainable front-end structure
 
----
-
-## 📂 Project Structure
-
-devscope-dashboard/
-├── screenshots/
-│   └── dashboard.png
-├── src/
-│   ├── components/
-│   │   ├── Dashboard.js
-│   │   ├── MetricCard.js
-│   │   └── PerformanceChart.js
-│   ├── data/
-│   │   └── metrics.js
-│   ├── App.js
-│   ├── index.js
-│   └── index.css
-├── public/
-├── README.md
-├── package.json
-└── package-lock.json
 
 ---
+
 
 ## 📸 Screenshots
 
