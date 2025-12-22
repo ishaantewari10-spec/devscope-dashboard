@@ -1,25 +1,33 @@
-# DevScope – Performance Analytics Dashboard
+## DevScope Dashboard
 
-DevScope is a front-end performance analytics dashboard built using React.  
-It visualizes application metrics and performance trends through reusable UI components and interactive charts.
+DevScope is a frontend performance monitoring dashboard built using React.  
+It visualizes real browser-based metrics such as page load time, user interactions, render cycles, FPS, and a derived performance score — all without a backend.
+
 
 ---
 
-## 🚀 Features
-- Modular, component-based architecture
-- Reusable metric cards for performance data
-- Interactive line chart for performance trends
-- Responsive grid-based layout
-- Clean and minimal UI design
+## 🚀 Key Features
+
+- Real page load time measurement using Browser Performance API
+- Live FPS (Frames Per Second) tracking via `requestAnimationFrame`
+- User interaction tracking (clicks & key events)
+- Controlled component render count
+- Dynamic performance score calculation
+- Interactive charts for live metrics visualization
+- Dark / Light mode toggle
+- Responsive and clean dashboard UI
+
 
 ---
 
 ## 🛠 Tech Stack
-- React
+
+- React (Hooks, Functional Components)
 - JavaScript (ES6+)
-- HTML5
-- CSS3
-- Chart.js (react-chartjs-2)
+- Recharts (Data Visualization)
+- HTML5 & CSS3
+- Netlify (Deployment)
+
 
 ---
 
@@ -32,22 +40,31 @@ It visualizes application metrics and performance trends through reusable UI com
 
 ---
 
+## 📂 Project Structure
 
-## 🔮 Future Enhancements
-- Backend API integration for real-time metrics
-- Dark mode support
-- Advanced performance filtering
-- Authentication-based dashboards
+devscope-dashboard/
+├── screenshots/
+│   └── dashboard.png
+├── src/
+│   ├── components/
+│   │   ├── Dashboard.js
+│   │   ├── MetricCard.js
+│   │   └── PerformanceChart.js
+│   ├── data/
+│   │   └── metrics.js
+│   ├── App.js
+│   ├── index.js
+│   └── index.css
+├── public/
+├── README.md
+├── package.json
+└── package-lock.json
 
 ---
 
 ## 📸 Screenshots
 
-### Dashboard View
-![DevScope Dashboard](https://raw.githubusercontent.com/ishaantewari10-spec/devscope-dashboard/main/screenshots/dashboard.png)
+![DevScope Dashboard](screenshots/dashboard.png)
 
 ### 👨‍💻 Author
 Built as a learning-focused project to strengthen front-end engineering and dashboard development skills.
-
-## 🌐 Live Demo
-👉 https://devscope-dashboard.netlify.app
