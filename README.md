@@ -42,10 +42,13 @@ It visualizes real browser-based metrics such as page load time, user interactio
 
 ---
 
-
 ## 📸 Screenshots
 
-![DevScope Dashboard](screenshots/dashboard.png)
+### 🌞 Light Theme
+![DevScope Dashboard Light](screenshots/dashboard-light.png)
+
+### 🌙 Dark Theme
+![DevScope Dashboard Dark](screenshots/dashboard-dark.png)
 
 ### 👨‍💻 Author
 Built as a learning-focused project to strengthen front-end engineering and dashboard development skills.
