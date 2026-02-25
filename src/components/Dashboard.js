@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import MetricCard from "./MetricCard";
 import PerformanceChart from "./PerformanceChart";
+import HistoryChart from "./HistoryChart";
 
 function Dashboard() {
   // ================= STATE =================
@@ -10,10 +11,28 @@ function Dashboard() {
   const [fps, setFps] = useState(0);
   const [score, setScore] = useState(0);
   const [darkMode, setDarkMode] = useState(false);
+  const [history, setHistory] = useState([]);
 
   // ================= REFS =================
   const frameCount = useRef(0);
   const lastFrameTime = useRef(performance.now());
+
+  // ================= FETCH HISTORY =================
+  const fetchHistory = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/api/metrics/history');
+      const data = await response.json();
+      setHistory(data);
+    } catch (err) {
+      console.error('Failed to fetch history:', err);
+    }
+  };
+
+  useEffect(() => {
+    fetchHistory();
+    const interval = setInterval(fetchHistory, 60000); // Refresh history every minute
+    return () => clearInterval(interval);
+  }, []);
 
   // ================= PAGE LOAD (REAL) =================
   useEffect(() => {
@@ -85,6 +104,33 @@ function Dashboard() {
     { title: "Score", value: score }
   ];
 
+  // ================= DATA SYNC =================
+  useEffect(() => {
+    const syncMetrics = async () => {
+      if (score === 0) return; // Wait for initial calculations
+
+      try {
+        await fetch('http://localhost:5000/api/metrics', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            loadTime: parseFloat(pageLoadTime),
+            renders,
+            userEvents,
+            fps,
+            score
+          }),
+        });
+        console.log('Metrics synced to backend');
+      } catch (err) {
+        console.error('Sync failed:', err);
+      }
+    };
+
+    const interval = setInterval(syncMetrics, 30000); // Sync every 30s
+    return () => clearInterval(interval);
+  }, [pageLoadTime, renders, userEvents, fps, score]);
+
   // ================= UI =================
   return (
     <div className={`dashboard ${darkMode ? "dark" : ""}`}>
@@ -108,6 +154,19 @@ function Dashboard() {
       </div>
 
       <PerformanceChart data={chartData} />
+
+      {/* Historical Data Section */}
+      <h2 style={{ marginTop: '3rem', borderTop: '1px solid #eee', paddingTop: '2rem' }}>Historical Performance Trends</h2>
+      <div className="history-container">
+        {history.length > 0 ? (
+          <HistoryChart data={history} />
+        ) : (
+          <div className="no-history">
+            <p style={{ opacity: 0.7 }}>No historical data available yet.</p>
+            <p style={{ fontSize: '0.9rem' }}>Data is automatically synced to MongoDB every 30 seconds.</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

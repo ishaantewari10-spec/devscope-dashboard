@@ -38,13 +38,44 @@
   margin: 24px 0;
 }
 
-.metric-card {
-  padding: 16px;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+.metric-card h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
 
-.dashboard.dark .metric-card {
+.metric-card p {
+  margin: 8px 0 0 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* ================= CHARTS ================= */
+.chart-container {
+  margin-top: 32px;
+  padding: 24px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.dashboard.dark .chart-container {
   background: #1e293b;
+}
+
+.no-history {
+  padding: 40px;
+  text-align: center;
+  background: rgba(0,0,0,0.02);
+  border-radius: 12px;
+  border: 2px dashed #ddd;
+}
+
+.dashboard.dark .no-history {
+  background: rgba(255,255,255,0.05);
+  border-color: #334155;
+}
+
+.history-chart {
+  margin-top: 20px;
 }
