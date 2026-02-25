@@ -20,11 +20,7 @@ app.get('/health', (req, res) => res.send('API Running'));
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/devscope';
 
 mongoose.connect(MONGO_URI)
-    .then(() => {
-        console.log('MongoDB Connected');
-        app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-    })
-    .catch(err => {
-        console.error('Database connection error:', err);
-        process.exit(1);
-    });
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => console.error('MongoDB connection error (History will not be saved):', err.message));
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
