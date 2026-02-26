@@ -46,7 +46,7 @@ function Dashboard() {
     setScanResult(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/metrics/scan', {
+      const response = await fetch('https://devscope-backend.onrender.com/api/metrics/scan', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: scanUrl }),
@@ -144,7 +144,7 @@ function Dashboard() {
       if (score === 0) return; // Wait for initial calculations
 
       try {
-        await fetch('http://localhost:5000/api/metrics', {
+        await fetch('https://devscope-backend.onrender.com/api/metrics', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
