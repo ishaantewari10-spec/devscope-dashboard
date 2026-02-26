@@ -46,12 +46,20 @@ router.post('/scan', async (req, res) => {
 
         const browser = await puppeteer.launch({
             headless: "new",
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
+            args: [
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-dev-shm-usage', // Crucial for Render/Docker to prevent memory crashes
+                '--disable-gpu',
+                '--no-zygote',
+                '--single-process'
+            ]
         });
         const page = await browser.newPage();
 
         const start = Date.now();
-        await page.goto(url, { waitUntil: 'load', timeout: 30000 });
+        // Increased timeout to 60s and changed waitUntil for heavy sites like YouTube
+        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
         const end = Date.now();
 
         // Use browser performance API from the target page
