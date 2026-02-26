@@ -62,7 +62,7 @@ function Dashboard() {
       setScanResult(data);
     } catch (err) {
       console.error('Scan failed:', err);
-      alert('Failed to connect to the backend server. Make sure it is running on port 5000.');
+      alert('Failed to connect to the backend server. Make sure the backend (Render) is running.');
     } finally {
       setIsScanning(false);
     }
